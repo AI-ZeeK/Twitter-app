@@ -31,5 +31,7 @@
   }
 }
 @include small-screen {
-  height: 6rem !important;
+  .head_block {
+    height: 6rem !important;
+  }
 }
