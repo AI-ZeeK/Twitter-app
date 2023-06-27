@@ -1,0 +1,30 @@
+.head_block {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid grey;
+  height: 5rem;
+  background: #ffffff99;
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .head_top {
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+  }
+  .head_bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    width: 100%;
+    .head_nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+}

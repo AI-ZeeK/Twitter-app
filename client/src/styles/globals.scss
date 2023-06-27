@@ -1,0 +1,122 @@
+@use "./abstracts/media-query" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importing Bootstrap SCSS file. */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 1px;
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px !important;
+  background: #7c7c7c;
+  background: linear-gradient(144deg, #7c7c7c 0%, rgb(151, 151, 151) 100%);
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: #7c7c7c;
+  background: linear-gradient(144deg, #7c7c7c 0%, rgb(151, 151, 151) 100%);
+}
+:root {
+  --main-bg: #ffffff;
+}
+body {
+  background: var(--main-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body.dim {
+  --main-bg: #1a232e;
+}
+body.dark {
+  --main-bg: #000000;
+}
+.app-block {
+  display: grid;
+  grid-template-columns: 1fr 1px 2.2fr 1px 1.3fr;
+  height: 100vh;
+  overflow: hidden;
+  .section-line {
+    width: 1px;
+    height: 100vh;
+    background-color: grey;
+  }
+  .app-box {
+    // border: 1px solid grey;
+    overflow: auto;
+    .body-block {
+      height: 100vh;
+      background-color: grey;
+    }
+  }
+}
+@include small-screen {
+  .app-block {
+    display: grid;
+    grid-template-columns: 1px 2fr 1px !important;
+
+    .app-box:first-child {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 10rem;
+      height: 100%;
+      //   border: 1px solid red;
+      z-index: 10;
+      background-color: #ffffff;
+    }
+    .app-box:last-child {
+      display: none;
+    }
+  }
+}
+
+@include mid-medium-screen {
+  .app-block {
+    display: grid;
+    grid-template-columns: 0.4fr 1px 2fr 1px !important;
+    .app-box:last-child {
+      display: none;
+    }
+  }
+}
+
+@include medium-screen {
+  .app-block {
+    display: grid;
+    grid-template-columns: 0.4fr 1px 2fr 1px 0.5fr !important;
+  }
+}
+
+@include large-screen {
+  .app-block {
+    display: grid;
+    grid-template-columns: 0.4fr 1px 2fr 1px 1.3fr !important;
+  }
+}
+
+@include huge-screen {
+  .app-block {
+    display: grid;
+    grid-template-columns: 1fr 1px 2.2fr 1px 1.3fr !important;
+  }
+}
