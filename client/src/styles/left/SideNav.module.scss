@@ -1,0 +1,116 @@
+@use "../abstracts/media-query" as *;
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  height: calc(100vh - 4.4rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 0.2rem;
+
+  .home_twitter {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    > div {
+      padding: 0.6rem 0.8rem;
+      border-radius: 1.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      transition: 300ms ease;
+      &:hover {
+        background: #cecece;
+      }
+    }
+  }
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // gap: 0.2rem;
+    .list_item {
+      padding: 0.6rem 0.8rem;
+      border-radius: 1.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.4rem;
+      transition: 300ms ease;
+      font-size: 1rem;
+      &.active {
+        font-weight: 500;
+      }
+      &.tweet_btn {
+        margin-top: 0.2rem;
+        background-color: #00b9fb;
+        color: #ffffff;
+        transition: 300ms ease;
+        width: 100%;
+        &:hover {
+          background: #0097ce;
+          //   color: #000;
+        }
+      }
+      &:hover {
+        background: #cecece;
+      }
+
+      .desc {
+        display: none;
+        padding-inline: 0.4rem;
+      }
+    }
+  }
+}
+
+@include small-screen {
+  .navbar .nav_list .list_item .desc {
+    display: flex !important;
+  }
+  .tweet_btn {
+    justify-content: center !important;
+
+    .icon {
+      display: none !important;
+    }
+  }
+}
+
+@include large-screen {
+  .navbar .nav_list .list_item .desc {
+    display: flex !important;
+  }
+  .tweet_btn {
+    justify-content: center !important;
+
+    .icon {
+      display: none !important;
+    }
+  }
+  .home_twitter {
+    justify-content: flex-start !important;
+  }
+}
+@include huge-screen {
+  .navbar .nav_list .list_item .desc {
+    display: flex !important;
+  }
+  .tweet_btn {
+    justify-content: center !important;
+
+    .icon {
+      display: none !important;
+    }
+  }
+  .home_twitter {
+    justify-content: flex-start !important;
+  }
+}

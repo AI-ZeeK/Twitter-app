@@ -1,0 +1,28 @@
+.head_block {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid grey;
+  height: 3.8rem;
+  background: #ffffff99;
+  backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .search_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.4rem;
+    background-color: #eaeaea;
+    > div {
+      padding: 0.8rem;
+    }
+    input {
+      padding-right: 0.8rem;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+}

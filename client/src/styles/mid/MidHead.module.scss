@@ -1,12 +1,12 @@
-@use "./abstracts/media-query" as *;
+@use "../abstracts/media-query" as *;
 
 .head_block {
   position: sticky;
   top: 0;
   border-bottom: 1px solid grey;
-  height: 5rem;
+  height: 5.4rem;
   background: #ffffff99;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,8 +25,26 @@
       align-items: center;
       padding: 0.6rem 1rem;
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 500;
+      transition: 300ms ease;
+      position: relative;
+
+      &.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 4rem;
+        height: 3px;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        background: #00b9fb;
+      }
+
+      &:hover {
+        background: #cecece;
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "@/styles/mid/MidHead.module.scss";
+import {homeNav} from "@/data/NavData";
 type Props = {};
 
 const MidHead = (props: Props) => {
@@ -9,8 +10,14 @@ const MidHead = (props: Props) => {
         <h3>Home</h3>
       </div>
       <div className={`${styles.head_bottom}`}>
-        <div className={`${styles.head_nav}`}>For You</div>
-        <div className={`${styles.head_nav}`}>Following</div>
+        {homeNav.map((item) => (
+          <div
+            key={item.id}
+            className={`${styles.head_nav} ${item.state ? styles.active : ""}`}
+          >
+            {item.head}
+          </div>
+        ))}
       </div>
     </nav>
   );
